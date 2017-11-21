@@ -1,0 +1,22 @@
+{
+  "name": "food-finder",
+  "version": "1.0.0",
+  "description": "This app will show the closest place to find the food that you want and when they close. The available stores are red if closing soon, yellow if an hour or longer and green if open for more than two hours.",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rubiksron/Food-Finder.git"
+  },
+  "author": "Ron Dunphy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rubiksron/Food-Finder/issues"
+  },
+  "homepage": "https://github.com/Rubiksron/Food-Finder#readme",
+  "dependencies": {
+    "live-server": "^1.2.0"
+  }
+}
