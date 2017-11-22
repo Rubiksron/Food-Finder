@@ -16,6 +16,7 @@ let map;
 
      window.eqfeed_callback = function(results) {
        for (let i = 0; i < results.features.length; i++) {
+         let magnitude = results.features[i].properties.mag;
          let place = results.features[i].properties.place;
          let coords = results.features[i].geometry.coordinates;
          let latLng = new google.maps.LatLng(coords[1],coords[0]);
@@ -25,14 +26,15 @@ let map;
          });
          let resultsEl = document.getElementById('results');
          let hrEl = document.createElement('hr');
-         hrEl.textContent = place;
+
+         hrEl.textContent = `${place} - Magnitude: ${magnitude}`;
          resultsEl.appendChild(hrEl);
        }
        resultsArray.push(results)
        console.log(' inside callback  --  resultsArray[0].features[1].properties.place:  ', resultsArray[0].features[1].properties.place);
      }
      console.log('outside callback  --  resultsArray', resultsArray);
-     the log above cannot dig any deeper into the array i.e. no resultsArray[0].features
+
 
      // the below format works for adding a class
      // hrEl.setAttribute("class", "green");
