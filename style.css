@@ -49,17 +49,36 @@ border-collapse: collapse;
 border-spacing: 0;
 }
 
-
+#results {
+  width: 90%;
+  height: 20em;
+  border: solid black .16em;
+  overflow: scroll;
+  margin: 1em;
+}
 #map {
   border: solid black .16em;
   height: 30em;
-  width: 100%;
+  width: 90%;
   margin: 1em;
 }
 h1 {
   font-size: 3em;
   text-align: center;
 }
+hr {
+  color: green;
+}
 body {
   width: 100%;
+  background-color: lightblue;
+}
+.green {
+  color: green;
+}
+.yellow {
+  color: yellow;
+}
+.red {
+  color: red;
 }
