@@ -49,7 +49,11 @@ border-collapse: collapse;
 border-spacing: 0;
 }
 
-
+#results {
+  height: 20em;
+  border: solid black .16em;
+  overflow: scroll;
+}
 #map {
   border: solid black .16em;
   height: 30em;

@@ -1,7 +1,7 @@
 'use strict';
 
-
-var map;
+const resultsArray = [];
+let map;
      function initMap() {
        map = new google.maps.Map(document.getElementById('map'), {
          zoom: 4,
@@ -9,21 +9,37 @@ var map;
          mapTypeId: 'terrain'
        });
 
-       var script = document.createElement('script');
+       let script = document.createElement('script');
        script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
        document.getElementsByTagName('head')[0].appendChild(script);
      }
 
      window.eqfeed_callback = function(results) {
-       for (var i = 0; i < results.features.length; i++) {
-         var coords = results.features[i].geometry.coordinates;
-         var latLng = new google.maps.LatLng(coords[1],coords[0]);
-         var marker = new google.maps.Marker({
+       for (let i = 0; i < results.features.length; i++) {
+         let place = results.features[i].properties.place;
+         let coords = results.features[i].geometry.coordinates;
+         let latLng = new google.maps.LatLng(coords[1],coords[0]);
+         let marker = new google.maps.Marker({
            position: latLng,
            map: map
          });
+         let resultsEl = document.getElementById('results');
+         let pEl = document.createElement('p');
+         pEl.textContent = place;
+         resultsEl.appendChild(pEl);
        }
+       resultsArray.push(results)
+       console.log(' inside callback  --  resultsArray[0].features[1].properties.place:  ', resultsArray[0].features[1].properties.place);
      }
+     console.log('outside callback  --  resultsArray[0]', resultsArray[0]);
+
+
+
+
+     // function listResults(resultsArray) {
+     //   console.log(resultsArray, "resultsArray:  ");
+     // }
+     // listResults();
 
 
 
