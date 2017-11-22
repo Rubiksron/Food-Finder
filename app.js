@@ -24,28 +24,21 @@ let map;
            map: map
          });
          let resultsEl = document.getElementById('results');
-         let pEl = document.createElement('p');
-         pEl.textContent = place;
-         resultsEl.appendChild(pEl);
+         let hrEl = document.createElement('hr');
+         hrEl.textContent = place;
+         resultsEl.appendChild(hrEl);
        }
        resultsArray.push(results)
        console.log(' inside callback  --  resultsArray[0].features[1].properties.place:  ', resultsArray[0].features[1].properties.place);
      }
-     console.log('outside callback  --  resultsArray[0]', resultsArray[0]);
-
-
-
-
-     // function listResults(resultsArray) {
-     //   console.log(resultsArray, "resultsArray:  ");
-     // }
-     // listResults();
+     console.log('outside callback  --  resultsArray', resultsArray);
 
 
 
 
 
-
+     // the below format works for adding a class
+     // hrEl.setAttribute("class", "green");
 
 
 // let zomato = require('zomato');
