@@ -26,7 +26,7 @@ let map;
          });
          let resultsEl = document.getElementById('results');
          let hrEl = document.createElement('hr');
-         hrEl.textContent = `${place} - Magnitude: ${magnitude}`;
+         hrEl.textContent = `Location: ${place} --- Magnitude: ${magnitude}`;
          resultsEl.appendChild(hrEl);
        }
        resultsArray.push(results)
@@ -37,9 +37,9 @@ let map;
 
 
 
-     // function listResults(resultsArray) {
-     //   console.log(resultsArray, "resultsArray:  ");
-     // }
+     function listResults(resultsArray) {
+       console.log(resultsArray, "resultsArray:  ");
+     }
      // listResults();
 
 
