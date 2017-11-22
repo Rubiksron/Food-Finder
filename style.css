@@ -50,6 +50,7 @@ border-spacing: 0;
 }
 
 #results {
+  width: 90%;
   height: 20em;
   border: solid black .16em;
   overflow: scroll;
@@ -66,12 +67,22 @@ h1 {
   font-size: 3em;
   text-align: center;
 }
+hr {
+  color: green;
+  background-color: lightgrey;
+  margin: .16em;
+}
 body {
   width: 100%;
   background-color: lightblue;
   /*margin: 1em;*/
 }
-hr {
-  background-color: lightgrey;
-  margin: .16em;
+.green {
+  color: green;
+}
+.yellow {
+  color: yellow;
+}
+.red {
+  color: red;
 }
