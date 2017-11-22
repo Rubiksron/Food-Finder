@@ -26,6 +26,7 @@ let map;
          });
          let resultsEl = document.getElementById('results');
          let hrEl = document.createElement('hr');
+
          hrEl.textContent = `${place} - Magnitude: ${magnitude}`;
          resultsEl.appendChild(hrEl);
        }
@@ -35,18 +36,8 @@ let map;
      console.log('outside callback  --  resultsArray', resultsArray);
 
 
-
-
-     // function listResults(resultsArray) {
-     //   console.log(resultsArray, "resultsArray:  ");
-     // }
-     // listResults();
-
-
-
-
-
-
+     // the below format works for adding a class
+     // hrEl.setAttribute("class", "green");
 
 
 // let zomato = require('zomato');
