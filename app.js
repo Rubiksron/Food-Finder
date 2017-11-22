@@ -26,35 +26,10 @@ let map;
          });
          let resultsEl = document.getElementById('results');
          let hrEl = document.createElement('hr');
-
-         hrEl.textContent = `${place} - Magnitude: ${magnitude}`;
+         hrEl.textContent = `Location: ${place} --- Magnitude: ${magnitude}`;
          resultsEl.appendChild(hrEl);
        }
        resultsArray.push(results)
        console.log(' inside callback  --  resultsArray[0].features[1].properties.place:  ', resultsArray[0].features[1].properties.place);
      }
      console.log('outside callback  --  resultsArray', resultsArray);
-
-
-     // the below format works for adding a class
-     // hrEl.setAttribute("class", "green");
-
-
-// let zomato = require('zomato');
-//
-// let client = zomato.createClient({
-//   userKey: '1816915b03a9fa391c88703a243405d0'
-// });
-//
-// client.getCities({
-//   q:"Seattle",
-//   lat:"47.608013",
-//   lon:"-122.335167",
-//   count:"10"
-// }, function(err, result) {
-//   if(!err) {
-//     console.log(result);
-//   } else {
-//     console.log(err);
-//   }
-// });

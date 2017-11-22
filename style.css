@@ -54,6 +54,7 @@ border-spacing: 0;
   height: 20em;
   border: solid black .16em;
   overflow: scroll;
+  width: 90%;
   margin: 1em;
 }
 #map {
@@ -74,6 +75,7 @@ hr {
 body {
   width: 100%;
   background-color: lightblue;
+  /*margin: 1em;*/
 }
 .green {
   color: green;
