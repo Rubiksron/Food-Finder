@@ -68,6 +68,8 @@ h1 {
 }
 hr {
   color: green;
+  background-color: lightgrey;
+  margin: .16em;
 }
 body {
   width: 100%;
