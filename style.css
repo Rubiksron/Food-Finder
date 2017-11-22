@@ -66,4 +66,9 @@ h1 {
 }
 body {
   width: 100%;
+  background-color: lightblue;
+}
+hr {
+  background-color: lightgrey;
+  margin: .16em;
 }
