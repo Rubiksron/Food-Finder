@@ -4,22 +4,17 @@ const resultsArray = [];
 const resultsEl = document.getElementById('results');
 let map, lat, lon;
 
-  // navigator.geolocation.getCurrentPosition(function(location) {
-  //   lat = location.coords.latitude;
-  //   lon = location.coords.longitude;
-    // lat = 47.6104844;
-    // lon = 122.3427239;
-  //   initMap(lat, lon);
-  //   console.log(`Your exact latitude and longitude is: ${lat}, ${lon}`);
-  // });
+  navigator.geolocation.getCurrentPosition(function(location) {
+    lat = location.coords.latitude;
+    lon = location.coords.longitude;
+    initMap(lat, lon);
+    console.log(`Your exact latitude and longitude is: ${lat}, ${lon}`);
+  });
 
-  lat = 47.6104844;
-  lon = 122.3427239;
-
-   function initMap() {
+   function initMap(lat, lon) {
        map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 4,
-         center: new google.maps.LatLng(47.6104844, -122.3427239),
+         zoom: 13,
+         center: new google.maps.LatLng(lat, lon),
          mapTypeId: 'terrain'
        });
 
@@ -38,7 +33,7 @@ let map, lat, lon;
            position: latLng,
            map: map
          });
-         //BELOW IS A TEST TO ENSURE THE USER'S LOCATION IS BEING ACCESSED, SO I CREATED A MARKER MY OWN LOCATION FOR PROOF.
+         //BELOW IS A TEST TO ENSURE THE USER'S LOCATION IS BEING ACCESSED, SO I CREATED A MARKER FOR MY OWN LOCATION FOR PROOF.
          latLng = new google.maps.LatLng(lat, lon);
          marker = new google.maps.Marker({
            position: latLng,
