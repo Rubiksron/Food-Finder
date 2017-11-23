@@ -72,6 +72,9 @@ hr {
   padding: .16em;
 }
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   background-color: tan;
   background-image:
