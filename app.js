@@ -4,20 +4,22 @@ const resultsArray = [];
 const resultsEl = document.getElementById('results');
 let map, lat, lon;
 
-  navigator.geolocation.getCurrentPosition(function(location) {
-    lat = location.coords.latitude;
-    lon = location.coords.longitude;
-    lat = 47.6104844;
-    lon = -122.3427239;
-    initMap(lat, lon);
-    console.log(`Your exact latitude and longitude is: ${lat}, ${lon}`);
-  });
+  // navigator.geolocation.getCurrentPosition(function(location) {
+  //   lat = location.coords.latitude;
+  //   lon = location.coords.longitude;
+    // lat = 47.6104844;
+    // lon = 122.3427239;
+  //   initMap(lat, lon);
+  //   console.log(`Your exact latitude and longitude is: ${lat}, ${lon}`);
+  // });
 
+  lat = 47.6104844;
+  lon = 122.3427239;
 
-   function initMap(lat, lon) {
+   function initMap() {
        map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 12,
-         center: new google.maps.LatLng(lat, lon),
+         zoom: 4,
+         center: new google.maps.LatLng(47.6104844, -122.3427239),
          mapTypeId: 'terrain'
        });
 
