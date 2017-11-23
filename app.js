@@ -1,6 +1,5 @@
 'use strict';
 
-const resultsArray = [];
 const resultsEl = document.getElementById('results');
 let map, lat, lon;
 
@@ -8,7 +7,14 @@ let map, lat, lon;
     lat = location.coords.latitude;
     lon = location.coords.longitude;
     initMap(lat, lon);
-    console.log(`Your exact latitude and longitude is: ${lat}, ${lon}`);
+
+    let latLng = new google.maps.LatLng(lat, lon);
+    let marker = new google.maps.Marker({
+      position: latLng,
+      map: map
+    });
+
+    console.log(`Your latitude and longitude is: ${lat}, ${lon}`);
   });
 
    function initMap(lat, lon) {
@@ -24,6 +30,8 @@ let map, lat, lon;
      }
 
      window.eqfeed_callback = function(results) {
+       if(results) console.log('success we have got results');
+       if(!results) console.error(err);
        for (let i = 0; i < results.features.length; i++) {
          let magnitude = results.features[i].properties.mag;
          let place = results.features[i].properties.place;
@@ -33,20 +41,18 @@ let map, lat, lon;
            position: latLng,
            map: map
          });
-         //BELOW IS A TEST TO ENSURE THE USER'S LOCATION IS BEING ACCESSED, SO I CREATED A MARKER FOR MY OWN LOCATION FOR PROOF.
-         latLng = new google.maps.LatLng(lat, lon);
-         marker = new google.maps.Marker({
-           position: latLng,
-           map: map
-         });
 
          let hrEl = document.createElement('hr');
          hrEl.textContent = `Location: ${place} - Magnitude: ${magnitude}`;
          resultsEl.appendChild(hrEl);
        }
-
-       resultsArray.push(results)
-       // console.log(' inside callback  --  resultsArray[0].features[1].properties.place:  ', resultsArray[0].features[1].properties.place);
      }
 
-     // console.log('outside callback  --  resultsArray', resultsArray);
+     $.ajax({
+       url: 'https://randomuser.me/api/',
+       dataType: 'json',
+       success: function(results) {
+         console.log('results.info.seed: ', results.info.seed);
+       }
+     })
+     .then(() => console.log('++++++in the .then() of $.ajax call++++++'));
